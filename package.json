@@ -12,7 +12,8 @@
     ".": {
       "import": "./dist/goblin-ui.js",
       "require": "./dist/goblin-ui.umd.cjs"
-    }
+    },
+    "./dist/style.css": "./dist/style.css"
   },
   "types": "./dist/goblin-ui.d.ts",
   "scripts": {
