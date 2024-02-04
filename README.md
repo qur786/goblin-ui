@@ -65,4 +65,4 @@ Feel free to contribute to Goblin UI by opening issues or submitting pull reques
 
 ## License
 
-Goblin UI is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+Goblin UI is licensed under the MIT License - see the [LICENSE.md](https://github.com/qur786/goblin-ui/blob/main/LICENSE) file for details.
