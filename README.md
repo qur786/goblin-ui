@@ -1,8 +1,11 @@
-# Goblin UI - A React Component Library
+# Goblin UI - An Opinionated React Component Library
 
-Goblin UI is a lightweight and simple React UI library designed for the React-Tailwind ecosystem. It is built with React, Vite, TypeScript, and Tailwind CSS to provide a seamless development experience. The library is open source, and anyone can use it freely to enhance their React applications.
+Goblin UI is a lightweight and straightforward React UI library tailored for the React-Tailwind ecosystem. It is built with React, Vite, TypeScript, and Tailwind CSS to provide a seamless development experience. This library is designed with a specific philosophy—offering predefined components with minimal customization choices. The aim is to streamline development by reducing the decision-making process associated with creating components with varying styles.
 
-**Note:** Anybody using thing library would still need to install React, Vite, Tailwind CSS, if they want to use these tech in their own created components. This library provides react components with set of flexibility only.
+**Opinionated Approach:**
+Goblin UI adopts an opinionated stance, providing a curated set of React components with a deliberate lack of extensive customization options. This intentional limitation aims to simplify the development process, preventing users from getting bogged down in endless styling choices.
+
+**Note:** Users leveraging this library will still need to install React, Vite, and Tailwind CSS separately if they wish to incorporate these technologies into their own custom components. Goblin UI offers React components with a predetermined level of flexibility, allowing developers to focus on building without the complexities of extensive styling decisions.
 
 ## Features
 
