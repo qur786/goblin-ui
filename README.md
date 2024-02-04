@@ -37,7 +37,7 @@ import "goblin-ui/dist/style.css"; // Import it once in the root of your repo.
 const App = () => {
   return (
     <div>
-      <Button>Click me</Button>
+      <Button title="Click me" />
     </div>
   );
 };
