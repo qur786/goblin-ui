@@ -25,6 +25,9 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
+  "resolutions": {
+    "jackspeak": "2.1.1"
+  },
   "peerDependencies": {
     "react": "^18.2.0"
   },
@@ -33,6 +36,7 @@
     "@storybook/addon-interactions": "^7.6.12",
     "@storybook/addon-links": "^7.6.12",
     "@storybook/addon-onboarding": "1.0.11",
+    "@storybook/addon-themes": "7.6.12",
     "@storybook/blocks": "^7.6.12",
     "@storybook/react": "^7.6.12",
     "@storybook/react-vite": "^7.6.12",
@@ -58,5 +62,8 @@
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "vite-plugin-dts": "^3.7.2"
+  },
+  "comments": {
+    "jackspeak": "Ref: https://github.com/storybookjs/storybook/issues/22431#issuecomment-1630086092"
   }
 }

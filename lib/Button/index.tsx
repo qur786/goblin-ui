@@ -3,5 +3,9 @@ interface ButtoProps {
 }
 
 export function Button({ title }: ButtoProps): JSX.Element {
-  return <button>{title}</button>;
+  return (
+    <button className="bg-black text-white dark:text-black dark:bg-white">
+      {title}
+    </button>
+  );
 }
