@@ -1,10 +1,10 @@
 {
   "name": "ultimate-ui",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src/ --ext ts,tsx --fix --report-unused-disable-directives --max-warnings 0",
     "pretty": "prettier src/**/*.{ts,tsx,js,jsx,css} --write",
