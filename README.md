@@ -32,6 +32,7 @@ yarn add goblin-ui
 
 ```jsx
 import { Button } from "goblin-ui";
+import "goblin-ui/dist/style.css"; // Import it once in the root of your repo.
 
 const App = () => {
   return (
