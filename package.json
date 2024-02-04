@@ -1,6 +1,5 @@
 {
   "name": "goblin-ui",
-  "private": true,
   "version": "1.0.0",
   "type": "module",
   "files": [
@@ -16,14 +15,12 @@
   },
   "types": "./dist/goblin-ui.d.ts",
   "scripts": {
-    "start": "vite",
     "build": "tsc && vite build",
     "lint": "eslint lib/ stories/ --ext ts,tsx --fix --report-unused-disable-directives --max-warnings 0",
     "pretty": "prettier stories/**/*.{ts,tsx,js,jsx,css} lib/**/*.{ts,tsx,js,jsx,css} --write",
     "format": "yarn lint && yarn pretty",
-    "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "start": "storybook dev -p 6006",
+    "build:storybook": "storybook build",
     "chromatic": "chromatic --project-token=CHROMATIC_TOKEN"
   },
   "resolutions": {
