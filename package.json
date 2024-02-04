@@ -3,11 +3,23 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/goblin-ui.umd.cjs",
+  "module": "./dist/goblin-ui.js",
+  "exports": {
+    ".": {
+      "import": "./dist/goblin-ui.js",
+      "require": "./dist/goblin-ui.umd.cjs"
+    }
+  },
+  "types": "./dist/goblin-ui.d.ts",
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint src/ --ext ts,tsx --fix --report-unused-disable-directives --max-warnings 0",
-    "pretty": "prettier src/**/*.{ts,tsx,js,jsx,css} --write",
+    "lint": "eslint lib/ --ext ts,tsx --fix --report-unused-disable-directives --max-warnings 0",
+    "pretty": "prettier lib/**/*.{ts,tsx,js,jsx,css} --write",
     "format": "yarn lint && yarn pretty",
     "preview": "vite preview"
   },
@@ -16,6 +28,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/node": "^20.11.16",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.20.0",
@@ -30,6 +43,7 @@
     "prettier": "^3.2.5",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.7.2"
   }
 }

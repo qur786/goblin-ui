@@ -18,8 +18,14 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Type generation */
+    "baseUrl": ".",
+    "paths": {
+      "goblin-ui": ["node_modules/goblin-ui"]
+    } // Ref: https://www.npmjs.com/package/vite-plugin-dts
   },
-  "include": ["src"],
+  "include": ["lib"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
