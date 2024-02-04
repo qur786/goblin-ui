@@ -47,11 +47,11 @@ const App = () => {
 
 ### Scripts
 
-- `npm start`: Run Storybook for component development
-- `npm build`: Build the library
-- `npm lint`: Lint the code using ESLint
-- `npm build:storybook`: Build Storybook for deployment
-- `npm chromatic`: Deploy and test components on Chromatic
+- `start`: Run Storybook for component development
+- `build`: Build the library
+- `lint`: Lint the code using ESLint
+- `build:storybook`: Build Storybook for deployment
+- `chromatic`: Deploy and test components on Chromatic
 
 ### Folder Structure
 
