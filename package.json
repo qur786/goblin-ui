@@ -18,8 +18,8 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint lib/ --ext ts,tsx --fix --report-unused-disable-directives --max-warnings 0",
-    "pretty": "prettier lib/**/*.{ts,tsx,js,jsx,css} --write",
+    "lint": "eslint lib/ stories/ --ext ts,tsx --fix --report-unused-disable-directives --max-warnings 0",
+    "pretty": "prettier stories/**/*.{ts,tsx,js,jsx,css} lib/**/*.{ts,tsx,js,jsx,css} --write",
     "format": "yarn lint && yarn pretty",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
