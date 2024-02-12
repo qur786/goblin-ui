@@ -1,6 +1,6 @@
 interface ButtoProps {
   title: string;
-  variant: "contained" | "outlined";
+  variant: "contained" | "outlined" | "text";
   background: "primary" | "secondary";
 }
 
@@ -18,6 +18,11 @@ export function Button({
     },
     outlined: {
       root: "gb-border gb-border-gray-300",
+      primary: "gb-text-primary",
+      secondary: "gb-text-secondary",
+    },
+    text: {
+      root: "",
       primary: "gb-text-primary",
       secondary: "gb-text-secondary",
     },
