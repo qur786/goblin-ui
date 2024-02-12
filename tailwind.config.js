@@ -5,7 +5,12 @@ export default {
   // Toggle dark-mode based on .dark class
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#0A79DF",
+        secondary: "#00CCCD",
+      },
+    },
   },
   plugins: [],
 };
