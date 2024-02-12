@@ -1,14 +1,32 @@
-interface ButtoProps {
+/**
+ * Represents a button component.
+ * @remarks
+ * This component renders a button with customizable text and click handler.
+ */
+export interface ButtonProps {
+  /**
+   * The text to display on the button.
+   */
   title: string;
+  /**
+   * The overall look of the button.
+   */
   variant: "contained" | "outlined" | "text";
+  /**
+   * The color of the button.
+   */
   background: "primary" | "secondary";
 }
 
+/**
+ * The Button component.
+ * @public
+ */
 export function Button({
   title,
   variant = "contained",
   background = "primary",
-}: ButtoProps): JSX.Element {
+}: ButtonProps): JSX.Element {
   const variantClass = {
     root: "gb-rounded-md",
     contained: {
