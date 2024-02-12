@@ -1,7 +1,5 @@
 /**
- * Represents a button component.
- * @remarks
- * This component renders a button with customizable text and click handler.
+ * Inteface for the Button component.
  */
 export interface ButtonProps {
   /**
@@ -19,7 +17,9 @@ export interface ButtonProps {
 }
 
 /**
- * The Button component.
+ * Represents a button component.
+ * @remarks
+ * This component renders a button with customizable text and click handler.
  * @public
  */
 export function Button({
