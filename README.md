@@ -7,6 +7,10 @@ Goblin UI adopts an opinionated stance, providing a curated set of React compone
 
 **Note:** Users leveraging this library will still need to install React, Vite, and Tailwind CSS separately if they wish to incorporate these technologies into their own custom components. Goblin UI offers React components with a predetermined level of flexibility, allowing developers to focus on building without the complexities of extensive styling decisions.
 
+## Detailed Documentation
+
+Checkout the detailed in-depth [documentation](https://qur786.github.io/goblin-ui/).
+
 ## Features
 
 - Simple and lightweight React components
