@@ -12,8 +12,20 @@ import {
   setTheme as setAppTheme,
 } from "./utils";
 
+/**
+ * GoblinProvider interface.
+ * @public
+ */
 export interface GoblinProvider {
+  /**
+   * The current theme of the app.
+   */
   theme: Theme;
+  /**
+   * A function to set theme to either "dark" or "light".
+   * @param theme
+   * @returns { void }
+   */
   setTheme: (theme: Theme) => void;
 }
 
@@ -22,10 +34,21 @@ const GoblinThemeContext = createContext<GoblinProvider>({
   setTheme: setAppTheme,
 });
 
+/**
+ * A react custom hook to access Goblin UI current theme and method to set theme to "dark" or "light".
+ * @returns {GoblinProvider}
+ * @public
+ */
 export function useGoblinTheme(): GoblinProvider {
   return useContext<GoblinProvider>(GoblinThemeContext);
 }
 
+/**
+ * Goblin context provider to wrap the whole app to provide theme support to the app.
+ * @param {PropsWithChildren} props
+ * @returns {JSX.Element}
+ * @public
+ */
 export function GoblinProvider({ children }: PropsWithChildren): JSX.Element {
   const [theme, setTheme] = useState<Theme>(getAppTheme());
 
