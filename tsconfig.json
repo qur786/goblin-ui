@@ -26,6 +26,6 @@
       "goblin-ui": ["node_modules/goblin-ui"]
     } // Ref: https://www.npmjs.com/package/vite-plugin-dts
   },
-  "include": ["lib"],
+  "include": ["lib", "stories"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
