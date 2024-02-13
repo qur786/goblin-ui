@@ -3,6 +3,7 @@ import {
   createContext,
   useContext,
   useLayoutEffect,
+  useMemo,
   useState,
 } from "react";
 import {
@@ -35,10 +36,19 @@ export function GoblinProvider({ children }: PropsWithChildren): JSX.Element {
 
   useLayoutEffect(() => {
     setAppTheme(theme);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Update theme only one for the first time as per 'getTheme'
 
+  const value = useMemo<GoblinProvider>(
+    () => ({
+      theme,
+      setTheme: setThemeValue,
+    }),
+    [theme],
+  );
+
   return (
-    <GoblinThemeContext.Provider value={{ theme, setTheme: setThemeValue }}>
+    <GoblinThemeContext.Provider value={value}>
       <div id="goblin-root">{children}</div>
     </GoblinThemeContext.Provider>
   );
