@@ -1,6 +1,6 @@
 import type { CSSProperties, HTMLAttributes } from "react";
 
-interface ProgressBarProps {
+export interface ProgressBarProps {
   value: number; // Non-negative value
   max: number; // Non negative value
   width?: string;
@@ -25,6 +25,13 @@ export function ProgressBar({
   progressBarStyle = {},
   progressBarClassName,
 }: ProgressBarProps): JSX.Element {
+  const computedProgress = value / max;
+  const progressWidth =
+    Number.isFinite(computedProgress) && computedProgress > 0
+      ? computedProgress.toLocaleString(undefined, {
+          style: "percent",
+        })
+      : "0%";
   return (
     <div
       style={{
@@ -41,12 +48,7 @@ export function ProgressBar({
           height: "100%",
           backgroundColor: progressBarColor,
           borderRadius: "50px",
-          width: (
-            (value >= 0 ? (value > max ? max : value) : 0) /
-            (max >= 0 ? max : 0)
-          ).toLocaleString(undefined, {
-            style: "percent",
-          }),
+          width: progressWidth,
           ...progressBarStyle,
         }}
       ></div>
