@@ -1,9 +1,11 @@
 import {
   PropsWithChildren,
   createContext,
+  useCallback,
   useContext,
   useLayoutEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
 import {
@@ -11,6 +13,11 @@ import {
   getTheme as getAppTheme,
   setTheme as setAppTheme,
 } from "./utils";
+import {
+  Notification,
+  NotificationProps,
+  type NotificationRef,
+} from "../Notification";
 
 /**
  * GoblinProvider interface.
@@ -23,15 +30,20 @@ export interface GoblinProvider {
   theme: Theme;
   /**
    * A function to set theme to either "dark" or "light".
-   * @param theme
-   * @returns { void }
    */
   setTheme: (theme: Theme) => void;
+  /**
+   * A function to trigger a notification to be shown.
+   */
+  triggerNotification: (args: NotificationProps) => void;
 }
 
 const GoblinThemeContext = createContext<GoblinProvider>({
   theme: getAppTheme(),
   setTheme: setAppTheme,
+  triggerNotification: () => {
+    console.log("Some issue occured while setting up the global context.");
+  },
 });
 
 /**
@@ -39,7 +51,7 @@ const GoblinThemeContext = createContext<GoblinProvider>({
  * @returns {GoblinProvider}
  * @public
  */
-export function useGoblinTheme(): GoblinProvider {
+export function useGoblinProvider(): GoblinProvider {
   return useContext<GoblinProvider>(GoblinThemeContext);
 }
 
@@ -51,11 +63,19 @@ export function useGoblinTheme(): GoblinProvider {
  */
 export function GoblinProvider({ children }: PropsWithChildren): JSX.Element {
   const [theme, setTheme] = useState<Theme>(getAppTheme());
+  const notificationRef = useRef<NotificationRef>(null);
 
   const setThemeValue: GoblinProvider["setTheme"] = (theme) => {
     setAppTheme(theme);
     setTheme(getAppTheme());
   };
+
+  const triggerNotification: GoblinProvider["triggerNotification"] =
+    useCallback((args) => {
+      if (notificationRef.current) {
+        notificationRef.current.displayNotification(args);
+      }
+    }, []);
 
   useLayoutEffect(() => {
     setAppTheme(theme);
@@ -66,13 +86,15 @@ export function GoblinProvider({ children }: PropsWithChildren): JSX.Element {
     () => ({
       theme,
       setTheme: setThemeValue,
+      triggerNotification,
     }),
-    [theme],
+    [theme, triggerNotification],
   );
 
   return (
     <GoblinThemeContext.Provider value={value}>
       <div id="goblin-root">{children}</div>
+      <Notification ref={notificationRef} />
     </GoblinThemeContext.Provider>
   );
 }
