@@ -18,10 +18,10 @@ export const decorators = [
   withThemeByClassName({
     themes: {
       // nameOfTheme: 'classNameForTheme',
-      light: "",
-      dark: "dark",
+      light: "gb-light",
+      dark: "gb-dark",
     },
-    defaultTheme: "light",
+    defaultTheme: "gb-light",
   }),
 ];
 
