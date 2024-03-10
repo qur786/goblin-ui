@@ -55,7 +55,7 @@ export function Button({
   return (
     <button
       className={twMerge(
-        `gb-text-white dark:gb-text-black dark:gb-bg-white gb-py-2 gb-px-4 ${variantClass.root} ${variantClass[variant].root} ${variantClass[variant][background]}`,
+        `gb-text-black dark:gb-bg-white gb-py-2 gb-px-4 ${variantClass.root} ${variantClass[variant].root} ${variantClass[variant][background]}`,
         className,
       )}
       {...rest}
