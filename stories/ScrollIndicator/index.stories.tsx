@@ -6,6 +6,7 @@ const meta: Meta<typeof ScrollIndicator> = {
   component: ScrollIndicator,
   args: {
     color: "#FA541C",
+    height: "5px",
   },
   argTypes: {
     color: {

@@ -7,9 +7,17 @@ export interface ScrollIndicatorProps {
    * @default #FA541C
    */
   color?: ProgressBarProps["progressBarColor"];
+  /**
+   * Height of the scroll indicator.
+   * @default 5px
+   */
+  height?: string;
 }
 
-export function ScrollIndicator({ color }: ScrollIndicatorProps): JSX.Element {
+export function ScrollIndicator({
+  color,
+  height,
+}: ScrollIndicatorProps): JSX.Element {
   const [yPosition, setYPosition] = useState(() => {
     return window.scrollY;
   });
@@ -35,6 +43,7 @@ export function ScrollIndicator({ color }: ScrollIndicatorProps): JSX.Element {
       progressContainerClassName="gb-h-full gb-fixed gb-top-0 gb-left-0"
       progressContainerStyle={{ backgroundColor: "transparent" }}
       progressBarColor={color}
+      height={height}
     />
   );
 }
