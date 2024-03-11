@@ -19,7 +19,7 @@ Checkout the detailed in-depth [documentation](https://qur786.github.io/goblin-u
 
 ## Live Preview
 
-Explore the components live on [Chromatic](https://65bf62db67958723222ca2d1-jeqxhslgwd.chromatic.com/).
+Explore the components live on [Chromatic](https://main--65bf62db67958723222ca2d1.chromatic.com/).
 
 ## Getting Started
 
