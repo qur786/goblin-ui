@@ -14,6 +14,9 @@ export interface ScrollIndicatorProps {
   height?: string;
 }
 
+/**
+ * A component to show horizontal progress bar when scrolling.
+ */
 export function ScrollIndicator({
   color,
   height,
