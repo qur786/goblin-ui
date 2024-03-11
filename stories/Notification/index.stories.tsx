@@ -1,3 +1,4 @@
+import { Notification } from "../../lib/Notification";
 import {
   NotificationPosition,
   NotificationVariant,
@@ -11,12 +12,15 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ComponentProps } from "react";
 import { Button } from "../../lib/Button";
 
-type NotificationCustomProps = ComponentProps<typeof GoblinProvider> &
+type NotificationCustomProps = ComponentProps<typeof Notification> &
   NotificationProps;
 
 const meta: Meta<NotificationCustomProps> = {
-  title: "GoblinProvider",
-  component: GoblinProvider,
+  title: "Notification",
+  component: Notification,
+  args: {
+    title: "Sample notification.",
+  },
   argTypes: {
     title: {
       type: "string",
@@ -55,7 +59,6 @@ export const Default: Story = {
       <Button
         onClick={triggerNotification.bind(null, {
           ...args,
-          title: "Notification sample",
         })}
       >
         Trigger Notification
