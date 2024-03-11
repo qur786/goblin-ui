@@ -51,7 +51,7 @@ const GoblinThemeContext = createContext<GoblinProvider>({
  * @returns {GoblinProvider}
  * @public
  */
-export function useGoblinProvider(): GoblinProvider {
+export function useGoblin(): GoblinProvider {
   return useContext<GoblinProvider>(GoblinThemeContext);
 }
 

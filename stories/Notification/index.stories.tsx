@@ -5,7 +5,7 @@ import {
 } from "../../lib/Notification";
 import {
   GoblinProvider,
-  useGoblinProvider,
+  useGoblin,
 } from "../../lib/GoblinProvider/theme-context";
 import type { Meta, StoryObj } from "@storybook/react";
 import { ComponentProps } from "react";
@@ -50,7 +50,7 @@ export const Default: Story = {
     ),
   ],
   render: function Component(args) {
-    const { triggerNotification } = useGoblinProvider();
+    const { triggerNotification } = useGoblin();
     return (
       <Button
         onClick={triggerNotification.bind(null, {
