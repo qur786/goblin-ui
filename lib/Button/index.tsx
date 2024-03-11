@@ -1,9 +1,6 @@
 import type { ComponentProps } from "react";
 import { twMerge } from "tailwind-merge";
 
-/**
- * Inteface for the Button component.
- */
 export interface ButtonProps extends ComponentProps<"button"> {
   /**
    * The text to display on the button.
@@ -23,7 +20,6 @@ export interface ButtonProps extends ComponentProps<"button"> {
  * Represents a button component.
  * @remarks
  * This component renders a button with customizable text and click handler.
- * @public
  */
 export function Button({
   title,
