@@ -4,11 +4,23 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import type { Dispatch, MouseEventHandler, SetStateAction } from "react";
 
 interface PaginationProps {
+  /**
+   * Total number of pages.
+   */
   pageLength: number;
+  /**
+   * Currently active page. The pages are 1 based index i.e. it should start with 1.
+   */
   currentPage: number;
+  /**
+   * setState function to update set current page.
+   */
   setCurrentPage: Dispatch<SetStateAction<number>>;
 }
 
+/**
+ * Component to add pagination buttons to a component. It should be used paginate large data.
+ */
 export function Pagination({
   pageLength,
   currentPage,
