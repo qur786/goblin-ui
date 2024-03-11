@@ -21,7 +21,6 @@ import {
 
 /**
  * GoblinProvider interface.
- * @public
  */
 export interface GoblinProvider {
   /**
@@ -48,8 +47,6 @@ const GoblinThemeContext = createContext<GoblinProvider>({
 
 /**
  * A react custom hook to access Goblin UI current theme and method to set theme to "dark" or "light".
- * @returns {GoblinProvider}
- * @public
  */
 export function useGoblin(): GoblinProvider {
   return useContext<GoblinProvider>(GoblinThemeContext);
@@ -57,9 +54,6 @@ export function useGoblin(): GoblinProvider {
 
 /**
  * Goblin context provider to wrap the whole app to provide theme support to the app.
- * @param {PropsWithChildren} props
- * @returns {JSX.Element}
- * @public
  */
 export function GoblinProvider({ children }: PropsWithChildren): JSX.Element {
   const [theme, setTheme] = useState<Theme>(getAppTheme());
