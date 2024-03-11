@@ -16,7 +16,9 @@ function getStoredTheme(): Theme | null {
  * Function to get the applied theme.
  */
 function getNativeTheme(): Theme {
-  return document.documentElement.classList.contains("dark") ? "dark" : "light";
+  return document.documentElement.classList.contains("gb-dark")
+    ? "dark"
+    : "light";
 }
 
 /**
@@ -32,13 +34,13 @@ export function getTheme(): Theme {
 export function setTheme(theme: Theme): void {
   if (theme === "dark") {
     (document.getElementById("goblin-root") as HTMLDivElement).classList.add(
-      "dark",
+      "gb-dark",
     );
   }
 
   if (theme === "light") {
     (document.getElementById("goblin-root") as HTMLDivElement).classList.remove(
-      "dark",
+      "gb-dark",
     );
   }
 
