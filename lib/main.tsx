@@ -6,3 +6,4 @@ export { ProgressBar } from "./ProgressBar";
 
 export type { ButtonProps } from "./Button";
 export type { Theme } from "./GoblinProvider/utils";
+export type { ProgressBarProps } from "./ProgressBar";
