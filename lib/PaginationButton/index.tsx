@@ -2,9 +2,15 @@ import type { ComponentProps } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface PaginationButtonProps extends ComponentProps<"button"> {
+  /**
+   * Indicates if the pagination button is active or not.
+   */
   active: boolean;
 }
 
+/**
+ * Button used in Pagination component
+ */
 export function PaginationButton({
   active,
   ...props
