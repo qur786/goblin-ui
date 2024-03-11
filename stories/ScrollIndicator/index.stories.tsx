@@ -13,14 +13,10 @@ type Story = StoryObj<typeof ScrollIndicator>;
 export const Default: Story = {
   render: () => {
     return (
-      <div style={{ height: "200vh" }}>
-        <h2
-          style={{
-            textAlign: "center",
-            fontSize: "24px",
-          }}
-        >
-          Scroll down
+      <div className="gb-h-[200vh]">
+        <h2 className="tb-text-center gb-text-2xl gb-font-semibold">
+          Scroll down. The height of this screen has been increased to allow
+          scrolling
         </h2>
         <ScrollIndicator />
       </div>
