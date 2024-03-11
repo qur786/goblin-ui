@@ -15,7 +15,7 @@ import {
 } from "./utils";
 import {
   Notification,
-  NotificationProps,
+  NotificationArgs,
   type NotificationRef,
 } from "../Notification";
 
@@ -33,8 +33,11 @@ export interface GoblinProvider {
   setTheme: (theme: Theme) => void;
   /**
    * A function to trigger a notification to be shown.
+   * @remarks
+   * This function is used to provide title and other configuration to the notification and trigger it.
+   * Developer does not need to include any Notification component to their UI, it has been handled.
    */
-  triggerNotification: (args: NotificationProps) => void;
+  triggerNotification: (args: NotificationArgs) => void;
 }
 
 const GoblinThemeContext = createContext<GoblinProvider>({

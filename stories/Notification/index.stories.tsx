@@ -2,7 +2,7 @@ import { Notification } from "../../lib/Notification";
 import {
   NotificationPosition,
   NotificationVariant,
-  type NotificationProps,
+  type NotificationArgs,
 } from "../../lib/Notification";
 import {
   GoblinProvider,
@@ -13,7 +13,7 @@ import { ComponentProps } from "react";
 import { Button } from "../../lib/Button";
 
 type NotificationCustomProps = ComponentProps<typeof Notification> &
-  NotificationProps;
+  NotificationArgs;
 
 const meta: Meta<NotificationCustomProps> = {
   title: "Notification",

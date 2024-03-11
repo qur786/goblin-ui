@@ -22,7 +22,7 @@ export const NotificationPosition = {
 type NotificationPosition =
   (typeof NotificationPosition)[keyof typeof NotificationPosition];
 
-export interface NotificationProps {
+export interface NotificationArgs {
   /**
    * Title of the notification, the message to be shown.
    */
@@ -42,7 +42,7 @@ export interface NotificationProps {
 }
 
 export interface NotificationRef {
-  displayNotification: (args: NotificationProps) => void;
+  displayNotification: (args: NotificationArgs) => void;
   hideNotification: () => void;
 }
 
@@ -81,7 +81,7 @@ export const Notification = forwardRef<NotificationRef, unknown>(
   function InnerNotification(_, ref): JSX.Element {
     const [show, setShow] = useState(false);
     const [notificationState, setNotificationState] =
-      useState<NotificationProps>({
+      useState<NotificationArgs>({
         title: "",
         position: NotificationPosition.BottomRight,
         timeout: 3000,

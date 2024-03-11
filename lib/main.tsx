@@ -11,3 +11,4 @@ export type { Theme } from "./GoblinProvider/utils";
 export type { ProgressBarProps } from "./ProgressBar";
 export type { PaginationProps } from "./Pagination";
 export type { ScrollIndicatorProps } from "./ScrollIndicator";
+export type { NotificationArgs } from "./Notification";
