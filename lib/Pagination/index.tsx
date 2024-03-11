@@ -1,9 +1,14 @@
 import { PaginationButton } from "../PaginationButton";
 import { useMemo } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
-import type { Dispatch, MouseEventHandler, SetStateAction } from "react";
+import type {
+  CSSProperties,
+  Dispatch,
+  MouseEventHandler,
+  SetStateAction,
+} from "react";
 
-interface PaginationProps {
+export interface PaginationProps {
   /**
    * Total number of pages.
    */
@@ -16,6 +21,14 @@ interface PaginationProps {
    * setState function to update set current page.
    */
   setCurrentPage: Dispatch<SetStateAction<number>>;
+  /**
+   * Style provided to the active pagination button.
+   */
+  activeButtonStyle?: CSSProperties;
+  /**
+   * Style provided to the in-active pagination button.
+   */
+  normalButtonStyle?: CSSProperties;
 }
 
 /**
@@ -25,6 +38,8 @@ export function Pagination({
   pageLength,
   currentPage,
   setCurrentPage,
+  activeButtonStyle,
+  normalButtonStyle,
 }: PaginationProps): JSX.Element {
   const handlePageSelect: MouseEventHandler<HTMLButtonElement> = (e) => {
     const page = e.currentTarget.getAttribute("data-page");
@@ -88,6 +103,7 @@ export function Pagination({
             active={currentPage === page}
             onClick={handlePageSelect}
             data-page={page}
+            style={currentPage === page ? activeButtonStyle : normalButtonStyle}
           >
             {page}
           </PaginationButton>
