@@ -18,10 +18,6 @@ export type ButtonColor = (typeof ButtonColor)[keyof typeof ButtonColor];
 
 export interface ButtonProps extends ComponentProps<"button"> {
   /**
-   * The text to display on the button.
-   */
-  title?: string;
-  /**
    * The overall look of the button.
    */
   variant?: ButtonVariant;
@@ -37,7 +33,6 @@ export interface ButtonProps extends ComponentProps<"button"> {
  * This component renders a button with customizable text and click handler.
  */
 export function Button({
-  title,
   variant = "contained",
   color = "primary",
   children,
@@ -74,8 +69,7 @@ export function Button({
       )}
       {...rest}
     >
-      {/* TODO: remove title */}
-      {children ?? title}
+      {children}
     </button>
   );
 }

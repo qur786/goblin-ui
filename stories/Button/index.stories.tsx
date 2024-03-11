@@ -5,10 +5,10 @@ const meta: Meta<typeof Button> = {
   title: "Button",
   component: Button,
   args: {
-    title: "Button",
+    children: "Button",
   },
   argTypes: {
-    title: {
+    children: {
       type: "string",
     },
     variant: {
