@@ -9,7 +9,7 @@ export const NotificationVariant = {
   Warning: "warning",
 } as const;
 
-type NotificationVariant =
+export type NotificationVariant =
   (typeof NotificationVariant)[keyof typeof NotificationVariant];
 
 export const NotificationPosition = {
@@ -19,7 +19,7 @@ export const NotificationPosition = {
   TopRight: "top-right",
 } as const;
 
-type NotificationPosition =
+export type NotificationPosition =
   (typeof NotificationPosition)[keyof typeof NotificationPosition];
 
 export interface NotificationArgs {

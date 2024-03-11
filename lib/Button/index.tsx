@@ -12,9 +12,9 @@ export const ButtonColor = {
   Secondary: "secondary",
 } as const;
 
-type ButtonVariant = (typeof ButtonVariant)[keyof typeof ButtonVariant];
+export type ButtonVariant = (typeof ButtonVariant)[keyof typeof ButtonVariant];
 
-type ButtonColor = (typeof ButtonColor)[keyof typeof ButtonColor];
+export type ButtonColor = (typeof ButtonColor)[keyof typeof ButtonColor];
 
 export interface ButtonProps extends ComponentProps<"button"> {
   /**
