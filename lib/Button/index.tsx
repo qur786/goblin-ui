@@ -1,6 +1,21 @@
 import type { ComponentProps } from "react";
 import { twMerge } from "tailwind-merge";
 
+export const ButtonVariant = {
+  Contained: "contained",
+  Outlined: "outlined",
+  Text: "text",
+} as const;
+
+export const ButtonColor = {
+  Primary: "primary",
+  Secondary: "secondary",
+} as const;
+
+type ButtonVariant = (typeof ButtonVariant)[keyof typeof ButtonVariant];
+
+type ButtonColor = (typeof ButtonColor)[keyof typeof ButtonColor];
+
 export interface ButtonProps extends ComponentProps<"button"> {
   /**
    * The text to display on the button.
@@ -9,11 +24,11 @@ export interface ButtonProps extends ComponentProps<"button"> {
   /**
    * The overall look of the button.
    */
-  variant?: "contained" | "outlined" | "text";
+  variant?: ButtonVariant;
   /**
    * The color of the button.
    */
-  background?: "primary" | "secondary";
+  color?: ButtonColor;
 }
 
 /**
@@ -24,7 +39,7 @@ export interface ButtonProps extends ComponentProps<"button"> {
 export function Button({
   title,
   variant = "contained",
-  background = "primary",
+  color = "primary",
   children,
   className,
   ...rest
@@ -55,7 +70,7 @@ export function Button({
         className,
         variantClass.root,
         variantClass[variant].root,
-        variantClass[variant][background],
+        variantClass[variant][color],
       )}
       {...rest}
     >
