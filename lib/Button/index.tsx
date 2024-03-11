@@ -32,14 +32,14 @@ export function Button({
   const variantClass = {
     root: "gb-rounded-md",
     contained: {
-      root: "",
+      root: "dark:gb-text-black gb-text-white ",
       primary: "gb-bg-primary",
       secondary: "gb-bg-secondary",
     },
     outlined: {
-      root: "gb-border gb-border-gray-300",
-      primary: "gb-text-primary",
-      secondary: "gb-text-secondary",
+      root: "gb-border gb-bg-transparent",
+      primary: "gb-text-primary gb-border-primary",
+      secondary: "gb-text-secondary gb-border-secondary",
     },
     text: {
       root: "",
@@ -51,8 +51,11 @@ export function Button({
   return (
     <button
       className={twMerge(
-        `gb-text-black dark:gb-bg-white gb-py-2 gb-px-4 ${variantClass.root} ${variantClass[variant].root} ${variantClass[variant][background]}`,
+        "gb-py-2 gb-px-4",
         className,
+        variantClass.root,
+        variantClass[variant].root,
+        variantClass[variant][background],
       )}
       {...rest}
     >
