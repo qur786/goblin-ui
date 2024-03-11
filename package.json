@@ -36,7 +36,7 @@
     "build": "tsc && vite build",
     "build-storybook": "storybook build",
     "chromatic": "chromatic --project-token=CHROMATIC_TOKEN",
-    "clean": "shx rm -rf node_modules",
+    "clean": "shx rm -rf node_modules docs dist",
     "doc": "typedoc",
     "format": "yarn lint && yarn pretty",
     "lint": "eslint lib/ stories/ --ext ts,tsx --fix --report-unused-disable-directives --max-warnings 0",
