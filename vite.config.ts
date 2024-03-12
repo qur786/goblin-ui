@@ -10,7 +10,7 @@ export default defineConfig({
   plugins: [
     dts({
       include: ["lib/"],
-      rollupTypes: true,
+      // rollupTypes: true, This option is used for bundling all types into 1 .d.ts file but due to this Ref: https://github.com/qmhc/vite-plugin-dts?tab=readme-ov-file#internal-error-occurs-when-using-rolluptypes-true issue, it is failing the storybook buil.
     }),
   ],
   build: {

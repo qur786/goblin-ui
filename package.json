@@ -28,7 +28,7 @@
   },
   "main": "./dist/goblin-ui.umd.cjs",
   "module": "./dist/goblin-ui.js",
-  "types": "./dist/goblin-ui.d.ts",
+  "types": "./dist/main.d.ts",
   "files": [
     "dist"
   ],
