@@ -3,10 +3,10 @@ import { Button } from "../Button";
 import type { CSSProperties, PropsWithChildren } from "react";
 
 export const ModalAnimation = {
-  FromTop: "from-top",
-  FromRight: "from-right",
-  FromLeft: "from-left",
-  FromBottom: "from-bottom",
+  Top: "top",
+  Right: "right",
+  Left: "left",
+  Bottom: "bottom",
 } as const;
 
 type ModalAnimation = (typeof ModalAnimation)[keyof typeof ModalAnimation];
@@ -43,28 +43,28 @@ function animateModal({
     : -2000;
 
   switch (animation) {
-    case ModalAnimation.FromBottom:
+    case ModalAnimation.Bottom:
       output = {
         bottom: topAndBottomAnimation,
         left: leftOnBottomAndTopAnimation,
         transitionProperty: "bottom",
       };
       break;
-    case ModalAnimation.FromRight:
+    case ModalAnimation.Right:
       output = {
         top: topOnLeftAndRightAnimation,
         right: leftAndRightAnimation,
         transitionProperty: "right",
       };
       break;
-    case ModalAnimation.FromLeft:
+    case ModalAnimation.Left:
       output = {
         top: topOnLeftAndRightAnimation,
         left: leftAndRightAnimation,
         transitionProperty: "left",
       };
       break;
-    case ModalAnimation.FromTop:
+    case ModalAnimation.Top:
     default:
       output = {
         top: topAndBottomAnimation,
@@ -92,7 +92,7 @@ export function Modal({
   onClose,
   height = 380,
   width = 380,
-  animation = ModalAnimation.FromTop,
+  animation = ModalAnimation.Top,
 }: ModalProps): JSX.Element {
   return (
     <>
