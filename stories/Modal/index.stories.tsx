@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Modal } from "../../lib/Modal";
+import { Modal, ModalAnimation } from "../../lib/Modal";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "../../lib/Button";
 
@@ -8,6 +8,12 @@ const meta: Meta<typeof Modal> = {
   component: Modal,
   args: {
     fullScreen: false,
+  },
+  argTypes: {
+    animation: {
+      options: Object.values(ModalAnimation),
+      control: { type: "radio" },
+    },
   },
 };
 
